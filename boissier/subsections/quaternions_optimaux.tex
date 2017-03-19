@@ -1,0 +1,21 @@
+La section ci-dessus a décrit comment récupérer un quaternion $q$ à partir d'une matrice de rotation 
+$3\times3 \text{ } Q$. Supposons, néanmoins, que nous avons une matrice $Q$ qui n'est pas celle d'une rotation pure, 
+à cause d'erreurs d'arrondi, par exemple, et que nous souhaitions trouver le quaternion $q$ qui représente 
+$Q$ le plus précisément possible. Dans ce cas, nous construisons une matrice $4 \times 4$ symétrique:
+
+\[
+	K = \frac{1}{3}
+	\left[
+		\begin{tabular}{c c c c}
+			$\Qxx - \Qyy -\Qzz$ & $\Qyx + \Qxy$ & $\Qzx + \Qxz$ & $\Qyz - \Qzy$ \\
+			$\Qyx + \Qxy$ & $\Qyy - \Qxx - \Qzz$ & $\Qzy + \Qyz$ & $\Qzx - \Qxz$ \\
+			$\Qzx + \Qxz$ & $\Qzy + \Qyz$ & $\Qzz - \Qxx - \Qyy$ & $\Qxy - \Qyx$ \\
+			$\Qyz - \Qzy$ & $\Qzx - \Qxz$ & $\Qxy - \Qyx$ & $\Qxx + \Qyy \Qzz$
+		\end{tabular}
+	\right]
+\]
+
+et nous cherchons le vecteur propre de coordonnées $(x, y, z, w)$ correspondant 
+à la plus grande valeur propre (cette valeur vaut 1 si et seulement si $Q$ 
+est une rotation pure). Le quaternion ainsi obtenu correspondra à la rotation 
+la plus proche de la matrice $Q$ de départ.

@@ -1,0 +1,31 @@
+Chercher le quaternion $(q_{0} + q_{x}i+q_{y}j + q_{z}k)$ correspondant à 
+la matrice de rotation $Q_{ij}$ peut être instable numériquement si la trace
+(la somme des éléments de la diagonale de la matrice) de la matrice de rotation 
+est nulle ou très petite.
+Une méthode robuste consiste à choisir l'élément de la diagonale ayant la valeur
+$Q_{uu}$ la plus grande en valeur absolue. Considérons:
+
+\[
+r = \pm \frac{1}{2} \sqrt{1 + Q_{uu} + Q_{vv} + Q_{ww}}
+\]
+
+Cette écriture est légitime car l'expression sous la racine est positive. 
+Si $r$ est nul, cela équivaut à une trace égale à $ - 1$ (soit un angle de rotation de $\pi$). La rotation est une symétrie axiale et donc le quaternion a la 
+forme suivante $(0, \vec{u} x, \vec{u} y, \vec{u} z)$ avec $\vec{u}$ vecteur
+unitaire dirigeant l'axe de rotation. Sinon le quaternion peut alors être 
+écrit sous la forme:
+
+\begin{align*}
+	q_{0} &= r \\
+	q_{u} &= \frac{1}{4r}(Q_{wv} - Q_{vw}) \\
+	q_{v} &= \frac{1}{4r}(Q_{uv} - Q_{wu}) \\
+	q_{w} &= \frac{1}{4r}(Q_{vu} - Q_{uv})
+\end{align*}
+
+Attention, il y a deux conventions pour les vecteurs : l'une suppose que les matrices de rotation 
+sont multipliées par des vecteurs-ligne à gauche, l'autre par des vecteurs-colonne à droite; 
+les deux conventions conduisent à des matrices qui sont transposées l'une de l'autre. 
+La matrice ci-dessus suppose que l'on utilise des vecteurs colonne à droite. Historiquement, 
+la convention vecteur-colonne-à-droite provient des mathématiques et de la mécanique classique, 
+alors que la convention vecteur-ligne-à-gauche provient de l'infographie, où il était plus 
+facile de saisir des vecteurs-lignes aux débuts de la discipline.
