@@ -14,6 +14,17 @@ dirigé par $\vec{u}$.
 
 En développant, on obtient en effet :
 
-\begin{align}
-	\vv{v'} &= \vv{v} \cosad + ( \vec{u} \vec{v} - \vec{v}\vec{u} ) sin \frac{\alpha}{2}
-\end{align}
+\begin{align*}
+	\vv{v'} & = \vv{v} \coscad + (\vec{u} \vec{v} - \vec{v}\vec{u}) \sinad \cosad- \vec{u}\vec{v}\vec{u}\sincad \\
+	& = \vv{v}\coscad + 2 ( \vecsc{u}{v}) \sinad \cosad - (\vec{v}(\vec{u} 
+	\cdot \vec{u})) \sincad \\
+	& = \vec{v}( \coscad - \sincad ) + (\vecsc{u}{v}) (2 \sinad \cosad) + \vv{u}(\vecpr{u}{v}) (2
+	\sincad) \\ 
+	& = \vec{v} \cosa + (\vecsc{u}{v}) \sina + \vec{u}(\vecpr{u}{v})( 1 - \cosa ) \\
+	& = (\vec{v} - \vec{u}(\vecpr{u}{v})) \cosa + (\vecsc{u}{v}) \sina + \vec{u}(\vecpr{u}{v}) \\
+	& = \vec{v}_{\perp} \cosa + (\vecsc{u}{v}_{\perp}) \sina + \vec{v}_{\|}
+\end{align*}
+
+où $\vec{v}_{\perp} \text{ et } \vec{v}_{\|}$ sont les composantes de $\vec{v}$ 
+respectivement orthogonale et colinéaire à $\vec{u}$. C'est là la formule de 
+\bsc{Olinde Rodrigues} qui donne la rotation d'angle $\alpha$ autour de l'axe dirigé par $\vec{u}$.
