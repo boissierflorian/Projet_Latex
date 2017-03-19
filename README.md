@@ -1,5 +1,5 @@
-# Projet_Latex
-Projet Latex (UO): Boissier, Ducoroy et Voronin
+# Projet Latex
+Boissier, Ducoroy et Voronin
 
 # Commencer une session de travail
 ```
