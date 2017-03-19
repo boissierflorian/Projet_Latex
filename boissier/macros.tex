@@ -1,5 +1,8 @@
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}% % Valeur absolue
 
+\tcbset{fonttitle=\bfseries,separator sign none, description delimiters parenthesis}
+\newtcbtheorem{dem}{Démonstration}{colback=green!5!white,colframe=green!75!black}{}
+
 % Vecteur 3d affiché en colonne
 % Param #1: le nom du vecteur
 % Param #2-4: x, y et z
@@ -45,4 +48,9 @@
 % v . u
 \newcommand{\vecpr}[2]{
 	\vec{#1} \cdot \vec{#2}
+}
+
+% 1 / 4
+\newcommand{\qter}{
+	\frac{1}{4}
 }
