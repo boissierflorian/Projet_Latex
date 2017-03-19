@@ -1,0 +1,31 @@
+Soient $(w, x, y, z)$ les coordonnées d'une rotation, comme décrit précédemment. 
+Définissons le quaternion : $q = w + xi + yj+ zk = w + \vvv{v}{x}{y}{z} = 
+\cos( \alpha / 2 ) + \vec{u} \sin( \alpha/2 )$
+où $\vec{u}$ est un vecteur unitaire. Soit également $\vec{v}$ un vecteur
+ordinaire de l'espace en 3 dimensions, considéré comme un quaternion avec
+une coordonnée réelle nulle. On peut alors montrer (voir section suivante) 
+que le produit de quaternions: 
+\[
+q\vec{v}q^-1
+\]
+renvoie le vecteur $\vec{v}$ tourné d'un angle $\alpha$ autour de l'axe dirigé
+par $\vec{u}$.La rotation se fait dans le sens des aiguilles d'une montre 
+si notre ligne de vue pointe dans la même direction que $\vec{u}$.Cette opération 
+est connue comme la conjugaison par $q$.
+
+Il s'ensuit que la multiplication de quaternions correspond à la composition de 
+rotations, car si $p \text{et} q$ sont des quaternions représentant des rotations, 
+alors la rotation (conjugaison) par $pq$ est:
+\[
+pq\vec{v}( pq )^-1 = pq\vec{v}q^-1p^-1 = p( q\vec{v}q^-1 )p^-1 \text{,}
+\]
+ce qui revient à tourner (conjuguer) par $q$, puis par $p$.
+
+Le quaternion inverse d'une rotation correspond à la rotation inverse, car
+$q^-1( q\vec{v}q^-1 )q = \vec{v}$.
+
+Le carré d'un quaternion correspond à la 
+rotation de deux fois le même angle autour du même axe. Plus généralement, 
+$q^n$ correspond à une rotation de $n$ fois l'angle autour du même axe que $q$.
+Cela peut être étendu à un réel arbitraire n, ce qui permet de calculer des rotations intermédiaires de façon fluide entre des rotations de l'espace, c'est
+\emph{l'interpolation linéaire sphérique}.

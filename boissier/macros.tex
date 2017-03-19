@@ -1,0 +1,32 @@
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}% % Valeur absolue
+
+% Vecteur 3d affiché en colonne
+% Param #1: le nom du vecteur
+% Param #2-4: x, y et z
+\newcommand{\vvv}[4]{%
+	\vv{#1}\left(
+		\begin{tabular}{c}
+			#2 \\ #3 \\ #4 \\
+		\end{tabular}
+	\right)
+}
+
+% cos alpha/2
+\newcommand{\cosad}{	
+	\cos \frac{\alpha}{2}
+}
+
+% sin alpha/2
+\newcommand{\sinad}{	
+	\sin \frac{\alpha}{2}
+}
+
+% cos² alpha/2
+\newcommand{\coscad}{	
+	\cos^2 \frac{\alpha}{2}
+}
+
+% sin² alpha/2
+\newcommand{\sincad}{	
+	\sin^2 \frac{\alpha}{2}
+}

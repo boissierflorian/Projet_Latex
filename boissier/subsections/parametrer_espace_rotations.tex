@@ -1,7 +1,23 @@
-Nous pouvons paramétrer la surface d'une sphère à l'aide de deux coordonnées, comme la latitude et la longitude. Mais la latitude et la longitude se comportent mal (sont dégénérés) aux pôles Nord et Sud, alors que les pôles ne sont pas différents par nature des autres points de la sphère. Aux pôles Nord et Sud (de latitudes $+$\ang{90} et $-$\ang{90}), la longitude perd son sens.
+Nous pouvons paramétrer la surface d'une sphère à l'aide de deux coordonnées, comme la latitude et la longitude. 
+Mais la latitude et la longitude se comportent mal (sont dégénérés) aux pôles Nord et Sud, 
+alors que les pôles ne sont pas différents par nature des autres points de la sphère. 
+Aux pôles Nord et Sud (de latitudes $+$\ang{90} et $-$\ang{90}), la longitude perd son sens.
 
-On peut montrer qu'aucun système de coordonnées à deux paramètres ne peut éviter cette dégénérescence (c'est le théorème de la boule chevelue). Nous pouvons éviter de tels problèmes en plongeant la sphère dans l'espace à trois dimensions et en la paramétrant au moyen de trois coordonnées cartésiennes (ici $w$, $x$ et $y$), en plaçant le pôle Nord à $(w, x, y) = (1, 0, 0)$, le pôle Sud à $(w, x, y) = ( -1, 0, 0)$ et l'équateur sera le cercle d'équations $w = 0 \text{et} x^2 + y^2 = 1$. Les points de la sphère satisfont la contrainte $w^2 + x^2 + y^2 = 1$, donc nous avons toujours deux degrés de liberté, bien que l'on ait trois coordonnées. Un point $(w, x, y)$ de la sphère représente une rotation de l'espace ordinaire autour de l'axe horizontal dirigé par le vecteur \vvv{v} {x}{y}{0}
-et d'angle $\alpha = 2\cos^{-1} w = 2 \sin^{-1}\sqrt{x^2+y^2}$.
+On peut montrer qu'aucun système de coordonnées à deux paramètres ne peut éviter cette dégénérescence 
+(c'est le théorème de la boule chevelue). Nous pouvons éviter de tels problèmes en plongeant la sphère 
+dans l'espace à trois dimensions et en la paramétrant au moyen de trois coordonnées 
+cartésiennes (ici $w$, $x$ et $y$), en plaçant le pôle Nord à $(w, x, y) = (1, 0, 0)$, 
+le pôle Sud à $(w, x, y) = ( -1, 0, 0)$ et l'équateur sera le cercle d'équations 
+$w = 0 \text{et} x^2 + y^2 = 1$. Les points de la sphère satisfont la contrainte $w^2 + x^2 + y^2 = 1$, 
+donc nous avons toujours deux degrés de liberté, bien que l'on ait trois coordonnées. 
+Un point $(w, x, y)$ de la sphère représente une rotation de l'espace ordinaire autour 
+de l'axe horizontal dirigé par le vecteur $\vvv{v}{x}{y}{0}$ et d'angle 
+$\alpha = 2\cos^{-1} w = 2 \sin^{-1}\sqrt{x^2+y^2}$.
 
-De la même façon, l'hypersphère décrivant l'espace des rotations dans l'espace en trois dimensions peut être paramétrée au moyen de trois angles (angles d'Euler), mais tout paramétrage de ce type dégénère en certains points de l'hypersphère, ce qui conduit au problème du blocage de cardan. Nous pouvons éviter cela en utilisant quatre coordonnées euclidennes $w, x, y et z$, avec $w^2 + x^2 + y^2 + z^2 = 1$. Le point de coordonnées $(w, x, y, z)$ représente une rotation autour de l'axe dirigé par le vecteur \vvv{v} {x}{y}{z}
+De la même façon, l'hypersphère décrivant l'espace des rotations dans l'espace en trois dimensions 
+peut être paramétrée au moyen de trois angles (angles d'Euler), mais tout paramétrage de ce type 
+dégénère en certains points de l'hypersphère, ce qui conduit au problème du blocage de cardan. 
+Nous pouvons éviter cela en utilisant quatre coordonnées euclidennes $w, x, y et z$, 
+avec $w^2 + x^2 + y^2 + z^2 = 1$. Le point de coordonnées $(w, x, y, z)$ représente une rotation 
+autour de l'axe dirigé par le vecteur $\vvv{v}{x}{y}{z}$
 et d'angle $\alpha = 2\cos^{-1} w = 2 \sin^{-1}\sqrt{x^2+y^2+z^2}$.

@@ -6,18 +6,32 @@ par exemple:
 (a + bi)(c + di) = ac + adi + bic + bidi = ac + adi + bci + bdi^{2} = (ac - bd) + (bc + ad) i
 \]
 
-De la même façon, les quaternions peuvent être définis en introduisant des symboles abstraits $i, j \text{et} k$ qui satisfont aux règles $i^2 = j^2 = k^2 = ijk = -1$ et les règles algébriques usuelles \emph{sauf} la commutativité de la multiplication (un exemple familier de multiplication non commutative est la multiplication des matrices). L'ensemble des règles de calcul découle de ces définitions ; par exemple, on peut montrer que 
-\[
-(a+bi+cj+dk)(e+fi+gj+hk)=(ae-bf-cg-dh)+(af+be+ch-dg)i+(ag+ce+df-bh)j+(ah+de+bg-cf)k.
-\]
+De la même façon, les quaternions peuvent être définis en introduisant des symboles abstraits 
+$i, j \text{et} k$ qui satisfont aux règles $i^2 = j^2 = k^2 = ijk = -1$ et les règles 
+algébriques usuelles \emph{sauf} la commutativité de la multiplication (un exemple familier 
+de multiplication non commutative est la multiplication des matrices). L'ensemble des règles 
+de calcul découle de ces définitions ; par exemple, on peut montrer que 
+\begin{align*}
+(a+bi+cj+dk)(e+fi+gj+hk) &= (ae-bf-cg-dh)+(af+be+ch-dg)i+ \\
+(ag+ce+df-bh)j + (ah+de+bg-cf)k.
+\end{align*}
 
-La partie imaginaire $bi+cj+dk$ d'un quaternion se comporte comme un vecteur \vvv{v}{b}{c}{d} d'un espace vectoriel à trois dimensions et la partie réelle $a$ comme un scalaire de $\mathbb{R}$.
+La partie imaginaire $bi+cj+dk$ d'un quaternion se comporte comme un vecteur $\vvv{v}{b}{c}{d}$
+ d'un espace vectoriel à trois dimensions et la partie réelle $a$ comme un scalaire de $\mathbb{R}$.
 
-Quand les quaternions sont utilisés en géométrie, il est pratique de les définir comme un scalaire plus un vecteur: $a+bi+cj+dk = a + \vec{v}$
+Quand les quaternions sont utilisés en géométrie, il est pratique de les définir comme un 
+scalaire plus un vecteur: $a+bi+cj+dk = a + \vec{v}$
 
-Ceux qui ont étudié les vecteurs à un niveau élémentaire pourraient trouver étrange d'additionner un \emph{nombre} à un vecteur, car ce sont des objets de natures très différentes, ou de \emph{multiplier} deux vecteurs entre eux, car cette opération n'est d'habitude pas définie. Néanmoins, si l'on se souvient qu'il ne s'agit là que d'une notation pour les parties réelles et imaginaires d'un quaternion, cela devient plus légitime.
+Ceux qui ont étudié les vecteurs à un niveau élémentaire pourraient trouver étrange d'additionner 
+un \emph{nombre} à un vecteur, car ce sont des objets de natures très différentes, ou de 
+\emph{multiplier} deux vecteurs entre eux, car cette opération n'est d'habitude pas définie.
+ Néanmoins, si l'on se souvient qu'il ne s'agit là que d'une notation pour les parties réelles et 
+ imaginaires d'un quaternion, cela devient plus légitime.
 
-Nous pouvons exprimer la multiplication de quaternions (produit de Hamilton) dans le langage moderne du produit vectoriel et du produit scalaire de vecteurs (qui ont en fait été inspirés au début par les quaternions). À la place des règles $i^2=j^2=k^2=ijk=-1$, nous avons la règle de multiplication de deux vecteurs $\vec{v}\vec{w}=\vec{v}\wedge\vec{w}-\vec{v}\cdot\vec{w}$, où:
+Nous pouvons exprimer la multiplication de quaternions (produit de Hamilton) dans le langage moderne 
+du produit vectoriel et du produit scalaire de vecteurs (qui ont en fait été inspirés au début par 
+les quaternions). À la place des règles $i^2=j^2=k^2=ijk=-1$, nous avons la règle de multiplication 
+de deux vecteurs $\vec{v}\vec{w}=\vec{v}\wedge\vec{w}-\vec{v}\cdot\vec{w}$, où:
 
 \begin{itemize}
 	\item $\vec{v}\vec{w}$ est la multiplication de vecteurs,
@@ -25,7 +39,10 @@ Nous pouvons exprimer la multiplication de quaternions (produit de Hamilton) dan
 	\item $\vec{v}\cdot\vec{w}$ est le produit scalaire un nombre).s
 \end{itemize}
 
-La multiplication de vecteurs n'est pas commutative (à cause du produit vectoriel), alors que la multiplication entre scalaires et entre un scalaire et un vecteur sont commutatives. Il découle de manière immédiate de ces règles que $(s + \vec{v})(t + \vec{w}) = (st - \vec{v}\cdot\vec{w}) + (s\vec{w}+t\vec{v}+\vec{v}\wedge\vec{w})$.
+La multiplication de vecteurs n'est pas commutative (à cause du produit vectoriel), alors que la 
+multiplication entre scalaires et entre un scalaire et un vecteur sont commutatives. Il découle de
+ manière immédiate de ces règles que $(s + \vec{v})(t + \vec{w}) = (st - \vec{v}\cdot\vec{w}) + 
+ (s\vec{w}+t\vec{v}+\vec{v}\wedge\vec{w})$.
 
 L'inverse (à gauche et à droite) d'un quaternion non nul est $(s + \vec{v})^-1 = 
 \frac{s - \vec{v}}{s^2 + \abs{\vec{v}}^2}$, comme cela peut être vérifié par calcul direct.
