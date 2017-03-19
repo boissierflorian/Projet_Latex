@@ -1,3 +1,5 @@
 # Exclus tous les fichiers inutiles
 *.aux
 *.log
+*.gz
+*.pdf
