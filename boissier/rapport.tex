@@ -5,17 +5,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Quaternions et rotation dans l'espace}
-
 Les quaternions unitaires fournissent une notation mathématique commode pour représenter l'orientation et la rotation d'objets en trois dimensions. Comparés aux angles d'Euler, ils sont plus simple à composer et évitent le problème du blocage de cardan. Comparés aux matrices de rotations, ils sont plus stables numériquement et peuvent se révéler plus efficaces. Les quaternions ont été adoptés dans des applications en infographie, robotique, navigation, dynamique moléculaire et la mécanique spatiale des satellites.
 
 \section{Opérations de rotation à l'aide de quaternions}
+Une explication très stricte des propriétés utilisées dans cette section est donnée par Altmann\label{Altmann}.
+
 	\subsection{L'hypersphère des rotations}
 		\subsubsection{Se faire une idée de l'espace des rotations}
+			\input{boissier/subsections/idee_espace_rotations.tex}
 		\subsubsection{Paramétrer l'espace des rotations}
+			\input{boissier/subsections/parametrer_espace_rotations.tex}
 	\subsection{Des rotations aux quaternions}
 		\subsubsection{Les quaternions en bref}
+			\input{boissier/subsections/quaternions_bref.tex}
 		\subsubsection{Relation entre les rotations et les quaternions unitaires}
+			\input{boissier/subsections/relation_rotations_quaternions.tex}
 		\subsubsection{Démonstration de l'équivalence entre conjugaison de quaternions et rotation de l'espace}
+			\input{boissier/subsections/dem_equivalence.tex}
 	\subsection{Exemple}
 	
 \section{Expliquer les propriétés des quaternions à l'aide des rotations}
