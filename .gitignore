@@ -1,7 +1,8 @@
-# Exclus tous les fichiers inutiles
+# Exclus tous les fichiers inutiles !!
 *.aux
 *.log
 *.gz
 *.pdf
 *.lof
 *.toc
+*.out
