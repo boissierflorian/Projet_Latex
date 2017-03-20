@@ -1,52 +1,58 @@
-\begin{savenotes}
-\begin{table}[ht]
+\begin{figure}[ht]
 	\centering
-		\begin{subtable}[t][4cm]{0.9\linewidth}
-			\centering
-			\begin{tabular}{cc}
-				Méthode & Mémoire \\
-				\toprule
-				Matrice de rotation & 9 \\
-				\midrule
-				Quaternion & 4 \\
-				\midrule
-				Axe et angle & 4\fnoteone \\
-				\bottomrule
-			\end{tabular}
-			\caption{Utilisation en mémoire}
-			\label{memoire}
-		\end{subtable}
+	\begin{subfigure}[ht]{\linewidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[ybar,
+			ylabel=Mémoire,
+			xtick = data,
+			nodes near coords,
+			symbolic x coords={Matrice de rotation, Quaternion, Axe et angle}]
+			\addplot coordinates {(Matrice de rotation, 4) 
+				(Quaternion, 4) (Axe et angle, 9)};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Utilisation en mémoire}
+	\end{subfigure}
 	
-	\begin{subtable}[t][4cm]{0.9\linewidth}
+	\begin{subfigure}[ht]{\linewidth}
 		\centering
-		\begin{tabular}{cccc}
-			Méthode & Multiplications & Additions et soustractions & Nombre total d'opérations \\
-			\toprule
-			Matrice de rotation & 27 & 18 & 45 \\
-			\midrule
-			Quaternion & 16 & 12 & 28 \\
-			\bottomrule
-		\end{tabular}
-		\caption{Comparaison de performances de la composition de rotations}
-		\label{performances_rotations}
-	\end{subtable}
+		\begin{tikzpicture}
+		\begin{axis}[ybar,
+		ylabel=Performance,
+		xtick = data,
+		nodes near coords,
+		legend style={at={(0.5,-0.15)},anchor=north,
+			legend columns=-1},
+		symbolic x coords={Matrice de rotation, Quaternion}]
+		\addplot coordinates {(Matrice de rotation, 27) (Quaternion, 16)};
+		\addplot coordinates {(Matrice de rotation, 18) (Quaternion, 12)};
+		\addplot coordinates {(Matrice de rotation, 45) (Quaternion, 28)};
+		\legend{Multiplications, Additions et Soustractions, Total Opérations}
+		\end{axis}
+		\end{tikzpicture}
+		\caption{Performance composition des rotations}
+	\end{subfigure}
 
-	\begin{subtable}[t][3cm]{\linewidth}
+	\begin{subfigure}[ht]{\linewidth}
 		\centering
-		\begin{tabular}{ccccc}
-			Méthode & Multiplications & Additions et soustractions & sin et cos & Nombre total d'opérations \\
-			\toprule
-			Matrice de rotation & 9 & 6 & 0 & 15 \\
-			\midrule
-			Quaternion & 21 & 18 & 0 & 39 \\
-			\midrule
-			Axe et angle & 23 & 16 & 2 & 41 \\
-			\bottomrule
-		\end{tabular}
-		\caption{Comparaison de performances de la composition de vecteurs}
-		\label{performances_vecteurs}
-	\end{subtable}
-\end{table}
-\end{savenotes}
+		\begin{tikzpicture}
+		\begin{axis}[ybar,
+		ylabel=Performance,
+		xtick = data,
+		nodes near coords,
+		legend style={at={(0.5,-0.15)},anchor=north,
+			legend columns=-1},
+		symbolic x coords={Matrice de rotation, Quaternion, Axe et angle}]
+		\addplot coordinates {(Matrice de rotation, 9) (Quaternion, 21) (Axe et angle, 23)};
+		\addplot coordinates {(Matrice de rotation, 6) (Quaternion, 18) (Axe et angle, 16)};
+		\addplot coordinates {(Matrice de rotation, 0) (Quaternion, 0) (Axe et angle, 2)};
+		\addplot coordinates {(Matrice de rotation, 15) (Quaternion, 39) (Axe et angle, 41)};
+		\legend{Multiplications, Additions et Soustractions, sin et cos, Total Opérations}
+		\end{axis}
+		\end{tikzpicture}
+		\caption{Performance composition des vecteurs}
+	\end{subfigure}
+\end{figure}
 
 \clearpage
