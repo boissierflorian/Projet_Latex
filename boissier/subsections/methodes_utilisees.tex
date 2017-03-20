@@ -1,11 +1,28 @@
-%Il y a trois techniques de base pour faire tourner un vecteur $\vec{v}$ :
-%\begin{enumerate}
-%	\item Calculer le produit matriciel de la matrice de rotation $3\times3$ représentant la 
-%	rotation \textbf{R} par la matrice colonne $3\times1$ représentant le vecteur $\vec{v}$.
-%	Cela nécessite $3 \times (3 \text{multiplications} + 2 \text{additions) = $ 
-%	9 multiplications et 6 additions, c'est la méthode la plus efficace pour faire tourner 
-%	un vecteur.
-%	\item Utiliser la formule de rotation avec des quaternions dite \emph{action par conjugaison}
-%	 $\vec{v}$
-%	\item L
-%\end{enumerate}
+Il y a trois techniques de base pour faire tourner un vecteur $\vec{v}$ :
+\begin{enumerate}
+	\item Calculer le produit matriciel de la matrice de rotation $3\times3$ représentant la 
+	rotation \textbf{R} par la matrice colonne $3\times1$ représentant le vecteur $\vec{v}$.
+	Cela nécessite $3 \times (3 \text{multiplications} + 2 \text{additions}) = $ 
+	9 multiplications et 6 additions, c'est la méthode la plus efficace pour faire tourner 
+	un vecteur.
+	
+	\item Utiliser la formule de rotation avec des quaternions dite \emph{action par conjugaison} $\vec{v_{\text{new}}} = z\vec{v}z^-1$.  Calculer ce résultat 
+	revient à transformer le quaternion en \emph{une matrice de rotation} 
+	\textbf{R}  en utilisant la formule de conversion d'un \emph{quaternion 
+	en matrice orthogonale}, puis à multiplier le résultat par la
+	matrice-colonne représentant le vecteur. 
+	En procédant à une \emph{recherche de sous-expressions communes}, l'algorithme 
+	se ramène à 21 multiplications et 18 additions. Une autre approche peut 
+	consister à convertir d'abord le quaternion dans la représentation sous 
+	forme d'axe et d'angle équivalente, puis à s'en servir pour faire tourner 
+	le vecteur. Néanmoins, c'est à la fois moins efficace et moins stable 
+	numériquement lorsque le quaternion est voisin de la rotation identité.
+	
+	\item Convertir la représentation sous forme d'axe et d'angle en 
+	\emph{matrice de rotation} \textbf{R}, puis multiplier par la matrice-colonne 
+	représentant le vecteur. La conversion coûte 14 multiplications, 
+	2 appels de fonction (sin et cos) et 10 additions ou soustractions 
+	après \emph{recherche de sous-expressions communes}, puis la rotation ajoute 
+	9 multiplications et 6 additions pour un total de 23 multiplications, 
+	16 additions ou soustractions et deux appels de fonctions trigonométriques.
+\end{enumerate}

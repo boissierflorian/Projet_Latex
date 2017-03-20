@@ -1,52 +1,50 @@
+\begin{savenotes}
 \begin{table}[ht]
 	\centering
-		\begin{tabular}{cc}
-			Méthode & Mémoire \\
+		\begin{subtable}[t][4cm]{0.9\linewidth}
+			\centering
+			\begin{tabular}{cc}
+				Méthode & Mémoire \\
+				\toprule
+				Matrice de rotation & 9 \\
+				\midrule
+				Quaternion & 4 \\
+				\midrule
+				Axe et angle & 4\fnoteone \\
+				\bottomrule
+			\end{tabular}
+			\caption{Utilisation en mémoire}
+			\label{memoire}
+		\end{subtable}
+	
+	\begin{subtable}[t][4cm]{0.9\linewidth}
+		\centering
+		\begin{tabular}{cccc}
+			Méthode & Multiplications & Additions et soustractions & Nombre total d'opérations \\
 			\toprule
-			Matrice de rotation & 9 \\
+			Matrice de rotation & 27 & 18 & 45 \\
 			\midrule
-			Quaternion & 4 \\
-			\midrule
-			Axe et angle & 4* \\
+			Quaternion & 16 & 12 & 28 \\
 			\bottomrule
 		\end{tabular}
-	\caption{Utilisation en mémoire}
-	\label{memoire}
+		\caption{Comparaison de performances de la composition de rotations}
+		\label{performances_rotations}
+	\end{subtable}
+
+	\begin{subtable}[t][3cm]{\linewidth}
+		\centering
+		\begin{tabular}{ccccc}
+			Méthode & Multiplications & Additions et soustractions & sin et cos & Nombre total d'opérations \\
+			\toprule
+			Matrice de rotation & 9 & 6 & 0 & 15 \\
+			\midrule
+			Quaternion & 21 & 18 & 0 & 39 \\
+			\midrule
+			Axe et angle & 23 & 16 & 2 & 41 \\
+			\bottomrule
+		\end{tabular}
+		\caption{Comparaison de performances de la composition de vecteurs}
+		\label{performances_vecteurs}
+	\end{subtable}
 \end{table}
-
-\begin{table}[ht]
-	\centering
-	\begin{tabular}{cccc}
-		Méthode & Multiplications & Additions et soustractions & Nombre total d'opérations \\
-		\toprule
-		Matrice de rotation & 27 & 18 & 45 \\
-		\midrule
-		Quaternion & 16 & 12 & 28 \\
-		\bottomrule
-	\end{tabular}
-	\caption{Comparaison de performances de la composition de rotations}
-	\label{performances_rotations}
-\end{table}
-
-\begin{table}[h]
-	\centering
-	\begin{tabular}{ccccc}
-		Méthode & Multiplications & Additions et soustractions & sin et cos & Nombre total d'opérations \\
-		\toprule
-		Matrice de rotation & 9 & 6 & 0 & 15 \\
-		\midrule
-		Quaternion & 21 & 18 & 0 & 39 \\
-		\midrule
-		Axe et angle & 23 & 16 & 2 & 41 \\
-		\bottomrule
-	\end{tabular}
-	\caption{Comparaison de performances de la composition de vecteurs}
-	\label{performances_vecteurs}
-\end{table}
-
-
-
-\footnote{* Note : la représentation sous forme d'angle et d'axe peut
-être stockée dans 3 emplacements seulement en multipliant l'axe de rotation 
-par l'angle de rotation ; néanmoins, avant de l'utiliser, il faut récupérer 
-le vecteur unitaire et l'angle en re-normalisant, ce qui coûte des opérations mathématiques supplémentaires.}
+\end{savenotes}
