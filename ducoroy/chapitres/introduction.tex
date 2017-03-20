@@ -1,0 +1,73 @@
+\chapter{Introduction}
+\section{Qu'est-ce que le C++ ?}
+Vous vous demandez sûrement par où commencer, si le \cplus est fait pour vous, s'il n'est pas préférable de démarrer avec un autre \lang. Vous vous demandez si vous allez pouvoir faire tout ce que vous voulez, quelles sont les forces et les faiblesses du \cplus…
+
+Dans ce chapitre, je vais tenter de répondre à toutes ces questions. 
+N'oubliez pas : \emph{c'est un cours pour débutants. Aucune connaissance préalable n'est requise.} 
+\section{Les \progs}
+Les \progs sont à la base de l'informatique. Ce sont eux qui vous permettent d'exécuter des actions sur votre \ordi.
+
+Prenons par exemple la \fig \ref{troisfen} qui représente une capture d'écran de mon \ordi. On y distingue \nb{3} fenêtres correspondant à \nb{3} \progs différents.
+Du premier plan à l'arrière plan :
+
+\input{figures/premiere_fig}
+\begin{itemize}
+	\item le navigateur web \textbf{Google Chrome}, qui permet de consulter des sites web;
+	\item l'explorateur de fichiers, qui permet de gérer les fichiers de son \ordi;
+	\item le traitement de texte \textbf{Microsoft Word}, qui permet de rédiger lettres et documents. 
+\end{itemize}
+
+Comme vous le voyez, chacun de ces \progs est conçu dans un but précis. On pourrait aussi citer les jeux, par exemple, qui sont prévus pour s'amuser : \textbf{Starcraft \nb{2}} (\fig \ref{scdeux}), \textbf{World of Warcraft},\textbf{ Worms}, \textbf{Team Fortress \nb{2} } , etc. Chacun d'eux correspond à un \prog différent.
+
+\input{figures/scdeux_fig}
+
+\emph{Tous les \progs ne sont pas forcément visibles. C'est le cas de ceux qui surveillent les mises à jour disponibles pour votre \ordi ou, dans une moindre mesure, de votre antivirus. Ils tournent tous en \guill{tâche de fond}, ils n'affichent pas toujours une fenêtre ; mais cela ne les empêche pas d'être actifs et de travailler !}
+
+Votre \ordi est une machine étonnante et complexe. À la base, il ne comprend qu'un \lang très simple constitué de \nb{0} et de \nb{1}. 
+Pour se simplifier la vie, les informaticiens ont créé des \langs intermédiaires, plus simples que le binaire.
+
+ Il existe aujourd'hui des centaines de \langs de \progio. Pour vous faire une idée, vous pouvez consulter une liste des \langs de \progio sur \textbf{Wikipédia}. Chacun de ces \langs a des spécificités, nous y reviendrons.
+Tous les \langs de \progio ont le même but : vous permettre de parler à l'\ordi plus simplement qu'en binaire. Voici comment cela fonctionne :
+
+\begin{enumerate}
+	\item Vous écrivez des instructions pour l'\ordi dans un \lang de \progio (par exemple le \cplus) ;
+	\item Les instructions sont traduites en binaire grâce à un \prog de \guill{traduction} ;
+	\item L'\ordi peut alors lire le binaire et faire ce que vous avez demandé !
+\end{enumerate}
+
+Résumons ces étapes dans un schéma (\fig \ref{compil}).
+\input{figures/compilation_figs.tex}
+Le fameux \guill{\prog de traduction} s'appelle en réalité le \emph{compilateur}. C'est un outil indispensable. Il vous permet de transformer votre code, écrit dans un \lang de \progio, en un vrai \prog exécutable.
+
+Reprenons le schéma précédent et utilisons un vrai vocabulaire d'informaticien (figure \ref{compildetail}).
+Voilà ce que je vous demande de retenir pour le moment : ce n'est pas bien compliqué mais c'est la base à connaître absolument !
+
+
+\section{Le C++ face aux autres \langs}
+\subsection{Le C++ : \lang de haut niveau ou de bas niveau ?}
+Parmi les centaines de \langs de \progio qui existent, certains sont plus populaires que d'autres. Sans aucun doute, le \cplus est un \lang \emph{très populaire}.
+
+La question est : faut-il choisir un \lang parce qu'il est populaire ? Il existe des \langs très intéressants mais peu utilisés. Le souci avec les \langs peu utilisés, c'est qu'il est difficile de trouver des gens pour vous aider et vous conseiller quand vous avez un problème. Voilà entre autres pourquoi le \cplus est un bon choix pour qui veut débuter : il y a suffisamment de gens qui développent en \cplus pour que vous n'ayez pas à craindre de vous retrouver tous seuls !
+
+C'est un \lang assez éloigné du binaire (et donc du fonctionnement de la machine), qui vous permet généralement de développer de façon plus souple et rapide.
+Par opposition, un \lang de bas niveau est plus proche du fonctionnement de la machine : il demande en général un peu plus d'efforts mais vous donne aussi plus de contrôle sur ce que vous faites. C'est à double tranchant.
+
+Le \cplus ? On considère qu'il fait partie de la seconde catégorie : c'est un \lang dit  de \guill{bas niveau}. Mais que cela ne vous fasse pas peur ! Même si le \cplus peut se révéler assez complexe, vous aurez entre les mains un \lang très puissant et particulièrement rapide. En effet, si l'immense majorité des jeux sont développés en \cplus, c'est parce qu'il s'agit du \lang qui allie le mieux puissance et rapidité. Voilà ce qui en fait un \lang incontournable.
+
+Le schéma suivant représente quelques \langs de \progio classés par  \guill{niveau} (\fig \ref{langbyniv}).
+\input{figures/langbyniv}
+Vous constaterez qu'il est en fait possible de \progrer en binaire grâce à un \lang très basique appelé l'assembleur.
+
+\subsection{Petit aperçu du C++}
+Pour vous donner une idée, voici un \prog très simple affichant le message \guill{Hello world!} à l'écran. Ce sera l'un des premiers codes source que nous étudierons dans les prochains chapitres.
+\input{listings/listing_apercu}
+
+\subsection{Résumé des forces du C++}
+\begin{itemize}
+	\item Il est très répandu. Comme nous l'avons vu, il fait partie des \langs de \progio les plus utilisés sur la planète. On trouve donc beaucoup de documentation sur Internet et on peut facilement avoir de l'aide sur les forums. 
+	\item Il est rapide, très rapide même, ce qui en fait un \lang de choix pour les applications critiques qui ont besoin de performances. C'est en particulier le cas des jeux vidéo, mais aussi des outils financiers ou de certains \progs militaires qui doivent fonctionner en temps réel.
+	\item Il est portable : un même code source peut théoriquement être transformé sans problème en exécutable sous \textbf{Windows}, \textbf{Mac OS} et \textbf{Linux}. 
+	\item Il existe de nombreuses bibliothèques pour le \cplus. Les bibliothèques sont des extensions pour le \lang, un peu comme des plug-ins. De base, le \cplus ne sait pas faire grand chose mais, en le combinant avec de bonnes bibliothèques, on peut créer des \progs 3D, réseaux, audio, fenêtrés, etc.
+	\item Il est multi-paradigmes. Ce mot barbare signifie qu'on peut \progrer de différentes façons en \cplus. Vous êtes encore un peu trop débutants pour que je vous présente tout de suite ces techniques de \progio mais l'une des plus célèbres est la \emph{Programmation Orientée Objet (POO)}. C'est une technique qui permet de simplifier l'organisation du code dans nos \progs et de rendre facilement certains morceaux de codes réutilisables. 
+	
+\end{itemize}

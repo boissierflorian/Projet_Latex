@@ -1,0 +1,87 @@
+\chapter{Votre premier \prog}
+\section{Le monde merveilleux de la console}
+Quand je vous annonce que nous allons commencer à \progrer, vous vous dites sûrement\textit{ « Chouette, je vais pouvoir faire ça, ça et ça ; et j'ai toujours rêvé de faire ça aussi ! »}. Il est de mon devoir de calmer un peu vos ardeurs et de vous expliquer comment cela va se passer.
+
+Nous allons commencer doucement. Nous n'avons de toute façon pas le choix car les \progs complexes 3D en réseau que vous imaginez peut-être nécessitent de connaître les bases.
+
+Il faut savoir qu'il existe 2 types de \progs : les \progs graphiques et les \progs console.
+\subsection{Les \progs graphiques}
+Il s'agit des \progs qui affichent des fenêtres. Ce sont ceux que vous connaissez sûrement le mieux. Ils génèrent à l'écran des fenêtres que l'on peut ouvrir, réduire, fermer, agrandir…
+Les programmeurs parlent de \emph{GUI} (Graphical User Interface - Interface Utilisateur Graphique voir \fig \ref{gui}). 
+\input{./figures/gui_fig}
+
+\subsection{Les \progs console}
+Les \progs en console sont plus fréquents sous \textbf{Linux} que sous \textbf{Windows} et \textbf{Mac OS X}. Ils sont constitués de simples textes qui s'affichent à l'écran, le plus souvent en blanc sur fond noir (\fig \ref{console}).
+
+\input{./figures/console_fig}
+Ces \progs fonctionnent au clavier. La souris n'est pas utilisée.
+Ils s'exécutent généralement linéairement : les messages s'affichent au fur et à mesure, de haut en bas.
+\subsection{Notre première cible : les \progs console}
+Je vous annonce que nous allons commencer par réaliser des \progs console. En effet, bien qu'ils soient un peu austères \textit{à priori}, ces \progs sont beaucoup plus simples à créer que les \progs graphiques.
+\section{Explications sur ce premier code source}
+Lorsque \textbf{Code::Blocks} crée un nouveau projet, il génère un fichier \lstinline|main.cpp| contenant ce code :
+
+\input{listings/listing_apercu}
+
+\subsection{include}
+La toute première ligne est : \partlist{C++}{1-1}{./listings/codes/premier_code.cpp}
+C'est ce qu'on appelle une \emph{directive de préprocesseur}. Son rôle est de \guill{charger} des fonctionnalités du \cplus pour que nous puissions effectuer certaines actions.
+
+En effet, \emph{le \cplus est un \lang très modulaire}. De base, il ne sait pas faire grand-chose (pas même afficher un message à l'écran !). On doit donc charger des extensions que l'on appelle bibliothèques et qui nous offrent de nouvelles possibilités.
+
+Ici on charge le fichier \lstinline!iostream!, ce qui nous permet d'utiliser une bibliothèque… d'affichage de messages à l'écran dans une console !
+
+\subsection{using namespace}
+\partlist{C++}{2-2}{./listings/codes/premier_code.cpp}
+… permet en quelque sorte d'indiquer dans quel lot de fonctionnalités notre fichier source va aller piocher.
+
+Si vous chargez plusieurs bibliothèques, chacune va proposer de nombreuses fonctionnalités. Parfois, certaines fonctionnalités ont le même nom. Imaginez une commande \guill{AfficherMessage} qui s'appellerait ainsi pour \lstinline|iostream| mais aussi pour \lstinline|Qt| ! Si vous chargez les deux bibliothèques en même temps et que vous appelez \guill{AfficherMessage}, l'\ordi ne saura pas s'il doit afficher un message en console avec \lstinline|iostream| ou dans une fenêtre avec \lstinline|Qt| !
+
+Pour éviter ce genre de problèmes, on a créé des \emph{namespaces} (espaces de noms), qui sont des sortes de dossiers à noms. La ligne \lstinline|using namespace std;| indique que vous allez utiliser l'espace de noms \lstinline|std| dans la suite de votre fichier de code. Cet espace de noms est un des plus connus car il correspond à la bibliothèque standard (\lstinline|std|), une bibliothèque livrée par défaut avec le \lang \cplus et dont \lstinline|iostream| fait partie.
+
+\subsection{int main}
+C'est ici que commence vraiment le cœur du \prog. Les \progs, vous le verrez, sont essentiellement constitués de fonctions. Chaque fonction a un rôle et peut appeler d'autres fonctions pour effectuer certaines actions.
+Tous les \progs possèdent une fonction dénommée \guill{main} (Qui se prononce \guill{mèïne} en anglais.), ce qui signifie \guill{principale}. C'est donc la fonction principale.
+
+Une fonction à la forme suivante :
+
+\input{listings/listing_codevide}
+Au bout de la fonction \lstinline|main| le \prog s'arrête ! Tout \prog commence au début de la fonction \lstinline|main| et se termine à la fin de celle-ci.
+
+\subsection{cout}
+Voici enfin la première ligne qui fait quelque chose de concret ! C'est la première ligne de \lstinline|main|, donc la première action qui sera exécutée par l'\ordi (les lignes que nous avons vues précédemment ne sont en fait que des préparatifs pour le \prog).
+
+\partlist{C++}{5-5}{./listings/codes/premier_code.cpp}
+Le rôle de \lstinline|cout| (à prononcer \guill{ci aoute}) est d'afficher un message à l'écran. C'est ce qu'on appelle une instruction. Tous nos \progs seront constitués d'instructions comme celle-ci, qui donnent des ordres à l'\ordi.
+
+Notez que \lstinline|cout| est fourni par \lstinline|iostream|. Si vous n'incluez pas \lstinline|iostream| au début de votre \prog, le compilateur se plaindra de ne pas connaître \lstinline|cout| et vous ne pourrez pas générer votre \prog !
+
+\subsection{return}
+La dernière ligne est :
+\partlist{C++}{6-6}{./listings/codes/premier_code.cpp}
+
+Ce type d'instruction clôt généralement les fonctions. En fait, la plupart des fonctions renvoient une valeur (un nombre par exemple). Ici, la fonction \lstinline|main| renvoie \nb{0} pour indiquer que tout s'est bien passé (toute valeur différente de \nb{0} aurait indiqué un problème).
+
+Vous n'avez pas besoin de modifier cette ligne, laissez-la telle quelle. Nous aurons d'autres occasions d'utiliser \lstinline|return| pour d'autres fonctions, nous en reparlerons !
+
+\section{Commentez et mettez en forme vos \progs !}
+En plus du code qui donne des instructions à l'\ordi, vous pouvez écrire des commentaires pour expliquer le fonctionnement de votre \prog.
+
+Les commentaires n'ont aucun impact sur le fonctionnement de votre logiciel : en fait, le compilateur ne les lit même pas et ils n'apparaissent pas dans le \prog généré. Pourtant, ces commentaires sont indispensables pour les développeurs : ils leur permettent d'expliquer ce qu'ils font dans leur code !
+
+\subsection{Différents types de commentaires}
+Il y a deux façons d'écrire des commentaires selon leur longueur. Je vais vous les présenter toutes les deux.
+
+\subsubsection{Commentaires courts}
+Pour écrire un commentaire court, sur une seule ligne, il suffit de commencer par \lstinline|//| puis d'écrire votre commentaire. Cela donne :
+
+\partlist{C++}{1-1}{./listings/codes/commentaires.cpp}
+
+Mieux, vous pouvez aussi ajouter le commentaire à la fin d'une ligne de code pour expliquer ce qu'elle fait :
+
+\partlist{C++}{2-2}{./listings/codes/commentaires.cpp}
+
+\subsubsection{Commentaires longs}
+
+\partlist{C++}{3-6}{./listings/codes/commentaires.cpp}
+

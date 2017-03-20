@@ -1,0 +1,64 @@
+%Raccourcis de langage
+\newcommand{\cplus}{\textbf{\emph{C++}}\xspace}
+\newcommand{\lang}{langage\xspace}
+\newcommand{\langs}{langages\xspace}
+\newcommand{\nb}[1]{\num{#1}\xspace}
+\newcommand{\progio}{programmation\xspace}
+\newcommand{\prog}{programme\xspace}
+\newcommand{\progs}{programmes\xspace}
+\newcommand{\progrer}{programmer\xspace}
+\newcommand{\ordi}{ordinateur\xspace}
+\newcommand{\ordis}{ordinateurs\xspace}
+\newcommand{\fig}{figure\xspace}
+\newcommand{\vari}{variable\xspace}
+\newcommand{\varis}{variables\xspace}
+
+%Mettre un élément, passé en argument, entre guillemets
+\newcommand{\guill}[1]{\og #1 \fg{}\xspace}
+
+
+% Listing créé à partir du #1 : langage souhaité, #2 : fichier ciblé
+\newcommand{\listinfo}[2]{
+	\lstset{language=#1,
+		numbers=left,
+		frame=single,
+		framesep=2pt,
+		aboveskip=1ex,
+		basicstyle=\ttfamily,
+		keywordstyle=\color{blue},
+		stringstyle=\color{red},
+		commentstyle=\color{green},
+		inputencoding=utf8/latin1,
+		breaklines=true
+	}
+	\lstinputlisting{#2}
+}	
+
+% Génère un fragment de code #1 : langage souhaité,
+%#2 : Lignes à extraire du code, sous format : num ligne - num ligne, ex : 1-1
+%#3 : fichier ciblé
+
+\newcommand{\partlist}[3]{
+	\lstset{language=#1,
+		basicstyle=\ttfamily,
+		frame=single,
+		framesep=2pt,
+		aboveskip=1ex,
+		keywordstyle=\color{blue},
+		stringstyle=\color{red},
+		inputencoding=utf8/latin1,
+		commentstyle=\color{green}
+	}
+		\lstinputlisting[linerange={#2}]{#3}
+}
+
+%Insertion d'images flottantes centrées de 7cm
+\newcommand{\fimg}[3]{
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[height=5cm,width=0.750\linewidth]{#1}
+		\caption{#2}
+		\label{#3}
+	\end{figure}
+}
+

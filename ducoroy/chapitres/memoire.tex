@@ -1,0 +1,50 @@
+\chapter{Utiliser la mémoire}
+\section{Introduction}
+Jusqu'à présent, vous avez découvert comment créer et compiler vos premiers \progs en mode console. Pour l'instant ces \progs sont très simples. Ils affichent des messages à l'écran… et c'est à peu près tout.
+Mais avant cela, il va nous falloir travailler dur puisque je vais vous présenter une notion fondamentale en informatique. Nous allons parler des\emph{ \varis}.
+\section{Qu'est-ce qu'une \vari ?}
+La seule et unique chose que vous ayez besoin de savoir, c'est qu'une \vari est une partie de la mémoire que l'\ordi nous prête pour y mettre des valeurs. Imaginez que l'\ordi possède dans ses entrailles une grande armoire (\fig \ref{tiroirs}). Cette dernière possède des milliers (des milliards !) de petits tiroirs ; ce sont des endroits que nous allons pouvoir utiliser pour mettre nos \varis.
+
+\input{figures/tiroirs_fig}
+\subsection{Les noms de \varis}
+Commençons par la question du nom des \varis. En \cplus, il y a quelques règles qui régissent les différents noms autorisés ou interdits :
+
+\begin{itemize}
+	\item les noms de \varis sont constitués de lettres, de chiffres et du tiret-bas \_ uniquement;
+	\item le premier caractère doit être une lettre (majuscule ou minuscule) ;
+	\item on ne peut pas utiliser d'accents ;
+	\item on ne peut pas utiliser d'espaces dans le nom.
+\end{itemize}
+
+ Le \lang fait la différence entre les majuscules et les minuscules. En termes techniques, on dit que \cplus est \emph{sensible à la casse}. Donc, \lstinline|nomZero|,  \lstinline|nomzero|,  \lstinline|NOMZERO| et \lstinline|NomZeRo| sont tous des noms de \varis différents.
+\subsection{Les types de \varis}
+Reprenons. Nous avons appris qu'une \vari a un nom et un type. Nous savons comment nommer nos \varis, voyons maintenant leurs différents types. L'\ordi aime savoir ce qu'il a dans sa mémoire, il faut donc indiquer quel type d'élément va contenir la \vari que nous aimerions utiliser. Est-ce un nombre, un mot, une lettre ? Il faut le spécifier.
+
+Voici donc la liste des types de \varis que l'on peut utiliser en C++.
+
+
+\begin{tabular}{cc}
+	$Type$ & $Contenu$ \\
+	\toprule
+	bool & Une valeur parmi deux possibles, vrai (true) ou faux (false). \\
+	\midrule
+	char & Un caractère. \\
+	\midrule
+	int & Un nombre entier. \\
+	\midrule
+	unsigned int & Un nombre entier positif ou nul. \\
+	\midrule
+	double & Un nombre à virgule. \\
+	\midrule
+	string & Une chaîne de caractères, c'est-à-dire un mot ou une phrase. \\
+	\bottomrule
+\end{tabular}
+
+\newtheorem{ bornes}{Note}
+\begin{ bornes}
+	Ces types ont des limites de validité, des bornes, c'est-à-dire qu'il y a des nombres qui sont trop grands pour un \lstinline|int| par exemple. Ces bornes dépendent de votre \ordi, de votre système d'exploitation et de votre compilateur. Sachez simplement que ces limites sont bien assez grandes pour la plupart des utilisations courantes. 
+	Cela ne devrait donc pas vous poser de problème, à moins que vous ne vouliez créer des \progs pour téléphones portables ou pour des micro-contrôleurs, qui ont parfois des bornes plus basses que les \ordis.
+	Il existe également d'autres types avec d'autres limites mais ils sont utilisés plus rarement.
+\end{ bornes}
+
+
