@@ -1,0 +1,35 @@
+Une paire de quaternions unitaires $Z_{I} \text{ et } Z_{r}$ peut
+représenter n'importe quelle rotation de l'espace en quatre dimensions.
+Étant donné un vecteur $\vv{v}$ en quatre dimensions, considéré comme 
+un quaternion, nous pouvons faire tourner $\vv{v}$ ainsi:
+
+\[
+	f(v) = z_{l}vz_{r} =
+	\left(
+		\begin{tabular}{cccc}
+			$a_{l}$ & $-b_{l}$ & $-c_{l}$ & $-d_{l}$ \\
+			$b_{l}$ & $a_{l}$ & $-d_{l}$ & $c_{l}$ \\
+			$c_{l}$ & $d_{l}$ & $a_{l}$ & $-b_{l}$ \\
+			$d_{l}$ & $-c_{l}$ & $b_{l}$ & $-a_{l}$ 
+		\end{tabular}
+	\right)
+	\left(
+	\begin{tabular}{cccc}
+		$a_{r}$ & $-b_{r}$ & $-c_{r}$ & $-d_{r}$ \\
+		$b_{r}$ & $a_{r}$ & $d_{r}$ & $-c_{r}$ \\
+		$c_{r}$ & $-d_{r}$ & $a_{r}$ & $b_{r}$ \\
+		$d_{r}$ & $c_{r}$ & $-b_{r}$ & $a_{r}$ 
+	\end{tabular}
+	\right)
+	\moq{w}{x}{y}{z}
+\]
+
+\[
+	z_{l} = 1 + \frac{dt_{ab} + dt_{cd}}{2}i + 
+	\frac{dt_{ac} + dt_{bd}}{2}j + \frac{dt_{ad} + dt_{bc}}{2}k
+\]
+
+\[
+	z_{r} = 1 + \frac{dt_{ab} - dt_{cd}}{2}i + 
+	\frac{dt_{ac} + dt_{bd}}{2}j + \frac{dt_{ad} - dt_{bc}}{2}k
+\]

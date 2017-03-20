@@ -1,0 +1,15 @@
+Étant donné un quaternion $z = a + bi + cj + dk (avec \abs{z} = 1)$ et un vecteur
+$\vec{v}$ de coordonnées \emph{v1, v2} et \emph{v3}, le code qui suit 
+effectue une rotation. Notez l'utilisation de variables temporaires 
+$txx$. Notez aussi l'optimisation des éléments de la diagonale de la matrice
+\textbf{R}: comme $a^2 + b^2 + c^2 + d^2 = 1$, on réécrit l'élément en 
+haut à gauche sous la forme $a^2 + b^2 + c^2 + d^2 -2c^2 - 2d^2 = 1 - 2c^2 - 2d^2$;
+les deux autres éléments de la diagonale peuvent être réécrits de même.
+
+\lstset{frame=single,framesep=2pt,
+	aboveskip=1ex,numberstyle=\tiny\color{blue},
+}
+
+\lstinputlisting{boissier/listings/pseudocode_quat.txt}
+
+\clearpage
