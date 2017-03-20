@@ -22,10 +22,18 @@
 \usepackage{footnote} % Note de bas de page pour les tableaux
 \usepackage{listings} % Code sources
 \usepackage{babel} % Accents
+\usepackage{fancyhdr} % En-têtes
+\pagestyle{fancy}
 \usepackage{subcaption} % Sous-Tableaux
 \usepackage[pageanchor=false]{hyperref} % Liens, etc.
 % Les liens amènent correctement aux images et non aux légendes
 \usepackage[all]{hypcap} 
+
+% Paramétrages des en-têtes
+\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[C]{\textbf{page \thepage}}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{UO \LaTeX}
 
 % Macros
 \input{boissier/macros.tex}
