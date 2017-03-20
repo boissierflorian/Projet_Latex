@@ -3,8 +3,6 @@
 \tcbset{fonttitle=\bfseries,separator sign none, description delimiters parenthesis}
 \newtcbtheorem{dem}{Démonstration}{colback=green!5!white,colframe=green!75!black}{}
 
-\makesavenoteenv{tabular}
-
 % Vecteur 3d affiché en colonne
 % Param #1: le nom du vecteur
 % Param #2-4: x, y et z
@@ -96,16 +94,6 @@
 
 \newcommand{\Qzz}{
 	\Q{z}{z}
-}
-
-% Note d'un élément d'un tableau (cf. boissier/subsections/resultats.tex)
-\newcommand{\fnoteone}{
-	\footnote{la représentation sous forme d'angle 
-	et d'axe peut être stockée dans 3 emplacements seulement 
-	en multipliant l'axe de rotation 
-	par l'angle de rotation ; néanmoins, avant de l'utiliser, 
-	il faut récupérer le vecteur unitaire et l'angle en 
-	re-normalisant, ce qui coûte des opérations mathématiques supplémentaires.}
 }
 
 % Matrice 1 colonne et 4 lignes
